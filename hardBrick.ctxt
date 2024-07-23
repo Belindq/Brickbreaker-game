@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=x1\ y1\ w\ h
+comment0.target=hardBrick(int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=boolean\ getHard()
+numComments=2
