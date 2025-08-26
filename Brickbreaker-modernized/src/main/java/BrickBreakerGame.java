@@ -1,24 +1,15 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
-import javax.imageio.*;
 import java.io.*;
-import java.awt.*;
+import javax.imageio.*;
 import javax.swing.*;
-import java.awt.event.*;
-import javax.imageio.*;
-import java.io.*;
 import sun.audio.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
-import javax.swing.JFrame;
 
 
 public class BrickBreakerGame extends JPanel implements KeyListener, ActionListener, MouseListener, MouseMotionListener
 
 {
+   
     //instance variables
     private Ball ball;
     private Timer timer;
@@ -45,9 +36,14 @@ public class BrickBreakerGame extends JPanel implements KeyListener, ActionListe
     //constructor
     public BrickBreakerGame()
     {
-        ball = new Ball(250, 450, 9, 2, 1, new Color(191,0,255)); // ball specs and size
+
+
+        setDoubleBuffered(true);
+        setFocusable(true);
+          new javax.swing.Timer(16, e -> repaint()).start();
+        ball = new Ball(250, 450, 11, 3, 3, new Color(191,0,255)); // ball specs and size
        
-        paddle = new Paddle(225, 470, 120, 15, Color.black, 40);
+        paddle = new Paddle(225, 470, 120, 15, Color.black, 50);
         addKeyListener(this);
         timer = new Timer(10, this);
         setFocusable(true);
@@ -71,14 +67,14 @@ public class BrickBreakerGame extends JPanel implements KeyListener, ActionListe
         
         try
         {
-           p1 = ImageIO.read(new File("play1.png"));
-           p2 = ImageIO.read(new File("play2.png"));
+           p1 = ImageIO.read(new File("assets/play1.png"));
+           p2 = ImageIO.read(new File("assets/play2.png"));
            
-           p = ImageIO.read(new File("play.png"));
-           menu1 = ImageIO.read(new File("menu1.png"));
-           menu = ImageIO.read(new File("menu.png"));
-            over = ImageIO.read(new File("over.png"));
-           win = ImageIO.read(new File("win.png"));
+           p = ImageIO.read(new File("assets/play.png"));
+           menu1 = ImageIO.read(new File("assets/menu1.png"));
+           menu = ImageIO.read(new File("assets/menu.png"));
+            over = ImageIO.read(new File("assets/over.png"));
+           win = ImageIO.read(new File("assets/win.png"));
         }
         catch( IOException e)
         {
@@ -86,8 +82,9 @@ public class BrickBreakerGame extends JPanel implements KeyListener, ActionListe
     }
     
    
-    public void paint(Graphics g)
+    public void paintComponent(java.awt.Graphics g)
     {
+        super.paintComponent(g);
         if(screen == 1) // menu screen
         {
             menu(g);
@@ -314,8 +311,8 @@ public class BrickBreakerGame extends JPanel implements KeyListener, ActionListe
          // load sounds
         try
         {
-            Click = new AudioStream(new FileInputStream("Click2.wav"));
-            Drop = new AudioStream(new FileInputStream("Drop2.wav"));
+            Click = new AudioStream(new FileInputStream("assets/Click2.wav"));
+            Drop = new AudioStream(new FileInputStream("assets/Drop2.wav"));
         }
         catch (IOException ea)
         {

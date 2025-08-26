@@ -1,9 +1,6 @@
 import java.awt.*;
-
 import java.io.*;
 import sun.audio.*;
-import java.net.MalformedURLException;
-import java.net.URL;
 public class Ball
 {
     //instance variables
@@ -117,8 +114,8 @@ public class Ball
          // load sounds
         try
         {
-            Click = new AudioStream(new FileInputStream("Click2.wav"));
-            Drop = new AudioStream(new FileInputStream("Drop2.wav"));
+            Click = new AudioStream(new FileInputStream("assets/Click2.wav"));
+            Drop = new AudioStream(new FileInputStream("assets/Drop2.wav"));
         }
         catch (IOException ea)
         {

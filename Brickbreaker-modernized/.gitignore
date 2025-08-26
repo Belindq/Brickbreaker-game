@@ -1,0 +1,12 @@
+# build artefacts
+out/
+build/
+.tools/
+*.class
+*.jar
+*.ctxt
+*.log
+
+# OS/editor
+.DS_Store
+.vscode/
