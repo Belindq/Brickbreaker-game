@@ -1,5 +1,5 @@
 # Brickbreaker-game
-![menu](https://github.com/Belindq/Brickbreaker-modernized/assets/menu1.png)
+![menu](https://github.com/Belindq/Brickbreaker-game/Brickbreaker-modernized/assets/menu1.png)
 # Brickbreaker 
 
 A small Java brick breaker game originally built for BlueJ, now portable to any modern JDK.  
